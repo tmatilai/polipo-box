@@ -10,27 +10,26 @@ Note that the example configuration allows access from everywhere. That should b
 
 * Install Vagrant 1.2 or later: [downloads.vagrantup.com](http://downloads.vagrantup.com/)
 * Install Vagrant plugins:
-```sh
-vagrant plugin install vagrant-berkshelf
-vagrant plugin install vagrant-omnibus
-```
+
+        vagrant plugin install vagrant-berkshelf
+        vagrant plugin install vagrant-omnibus
+
 * Clone this repository and customize as needed:
-```sh
-git clone https://github.com/tmatilai/polipo-box.git
-cd polipo-box
-#edit Vagrantfile
-```
+
+        git clone https://github.com/tmatilai/polipo-box.git
+        cd polipo-box
+        # edit Vagrantfile
+
 * Spin up the box
-```sh
-vagrant up
-```
+
+        vagrant up
 
 ### Configuring vagrant-proxyconf
 
 * Install vagrant-proxyconf plugin:
-```sh
-vagrant plugin install vagrant-proxyconf
-```
+
+        vagrant plugin install vagrant-proxyconf
+
 * Configure all Vagrant boxes to use the proxy by default. Put something like the following to _$HOME/.vagrant.d/Vagrantfile_:
 ```ruby
 Vagrant.configure("2") do |config|
