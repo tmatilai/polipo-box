@@ -4,6 +4,7 @@ Example setup for running [polipo](http://www.pps.univ-paris-diderot.fr/~jch/sof
 
 This can be used in combination with [vagrant-proxyconf][proxyconf] plugin to cache most HTTP traffic of the VMs to speed up Vagrant usage. The configuration should be easy to customize either as well for local machines as for cloud providers.
 
+Polipo does its best also when offline. But as it can't cache HTTPS traffic, you might want to use [vagrant-cachier](https://github.com/fgrehm/vagrant-cachier) in combination with vagrant-proxyconf if you aim to use Vagrvm.synced_folder ".", "/vagrant", disabled: trueant without internet connection at times.
 Note that the example configuration allows access from everywhere. That should be fine when running on local machine or internal network, but not a good idea if the machine is accessible from internet.
 
 ## Usage
