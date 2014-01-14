@@ -10,7 +10,7 @@ Note that the example configuration allows access from everywhere. That should b
 
 ## Usage
 
-* Install Vagrant 1.2 or later: [downloads.vagrantup.com](http://downloads.vagrantup.com/)
+* Install Vagrant 1.2 or later: [www.vagrantup.com/downloads](http://www.vagrantup.com/downloads)
 * Install Vagrant plugins:
 
         vagrant plugin install vagrant-berkshelf
