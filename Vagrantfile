@@ -1,6 +1,3 @@
-Vagrant.require_plugin 'vagrant-berkshelf'
-Vagrant.require_plugin 'vagrant-omnibus'
-
 IP  = ENV.fetch('IP', '192.168.33.200')
 BOX = ENV.fetch('BOX', 'debian-7')
 
