@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
   config.vm.network :private_network, ip: IP
 
   # Disable default share
-  config.vm.synced_folder '.', '/vagrant', id: 'vagrant-root', disabled: true
+  config.vm.synced_folder '.', '/vagrant', disabled: true
 
   # Configure plugins
   config.berkshelf.enabled = true
@@ -27,6 +27,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :chef_solo do |chef|
     chef.add_recipe 'apt'
     chef.add_recipe 'polipo_appliance'
+
     chef.json = {
       polipo_appliance: {
         allowed_clients: "0.0.0.0/0"
