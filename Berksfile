@@ -1,6 +1,6 @@
 site :opscode
 
-cookbook 'apt'
+cookbook 'apt', '~> 2.3'
 cookbook 'polipo_appliance',
   github: 'sandfish8/chef-polipo_appliance',
   rel: 'cookbooks/polipo_appliance',
