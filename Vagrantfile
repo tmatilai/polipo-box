@@ -14,14 +14,11 @@ Vagrant.configure("2") do |config|
   config.berkshelf.enabled = true
   config.omnibus.chef_version = :latest
 
-  # Override global vagrant-proxyconf settings.
-  # Do not configure this VM to use the proxy as it might not been
-  # installed or configured yet.
-  %w[
-    VAGRANT_HTTP_PROXY VAGRANT_HTTPS_PROXY
-    VAGRANT_ENV_HTTP_PROXY VAGRANT_ENV_HTTPS_PROXY
-    VAGRANT_APT_HTTP_PROXY VAGRANT_APT_HTTPS_PROXY
-  ].each { |var| ENV[var] = '' }
+  # Disable the vagrant-proxyconf plugin, as the proxy might not
+  # have been installed or configured yet.
+  if Vagrant.has_plugin?('vagrant-proxyconf')
+    config.proxy.enabled = false
+  end
 
   # Install and configure polipo
   config.vm.provision :chef_solo do |chef|
