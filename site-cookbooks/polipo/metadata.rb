@@ -1,0 +1,6 @@
+name             'polipo'
+maintainer       'Teemu Matilainen'
+maintainer_email 'teemu.matilainen@iki.fi'
+license          'MIT'
+description      'Installs/Configures polipo'
+version          '1.0.0'

@@ -11,7 +11,6 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder '.', '/vagrant', disabled: true
 
   # Configure plugins
-  config.berkshelf.enabled = true
   config.omnibus.chef_version = :latest
 
   # Disable the vagrant-proxyconf plugin, as the proxy might not
@@ -20,14 +19,18 @@ Vagrant.configure("2") do |config|
     config.proxy.enabled = false
   end
 
+  # Update apt cache
+  config.vm.provision :shell, inline: 'apt-get update'
+
   # Install and configure polipo
   config.vm.provision :chef_solo do |chef|
-    chef.add_recipe 'apt'
-    chef.add_recipe 'polipo_appliance'
+    chef.cookbooks_path = ['site-cookbooks']
+    chef.add_recipe 'polipo'
 
     chef.json = {
-      polipo_appliance: {
-        allowed_clients: "0.0.0.0/0"
+      polipo: {
+        allowed_clients: '0.0.0.0/0',
+        proxy_address: '::0'
       }
     }
   end

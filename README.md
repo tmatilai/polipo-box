@@ -13,7 +13,6 @@ Note that the example configuration allows access from everywhere. That should b
 * Install Vagrant 1.2 or later: [www.vagrantup.com/downloads](http://www.vagrantup.com/downloads)
 * Install Vagrant plugins:
 
-        vagrant plugin install vagrant-berkshelf
         vagrant plugin install vagrant-omnibus
 
 * Clone this repository and customize as needed:
