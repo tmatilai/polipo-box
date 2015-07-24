@@ -44,6 +44,12 @@ allowedClients = <%= node['polipo']['allowed_clients'] %>
 # socksParentProxy = "localhost:9050"
 # socksProxyType = socks5
 
+# Uncomment this if you want to scrub private information from the log:
+
+# scrubLogs = true
+
+logSyslog = true
+logFile = /var/log/polipo/polipo.log
 
 ### Memory
 ### ******
@@ -153,6 +159,3 @@ allowedClients = <%= node['polipo']['allowed_clients'] %>
 # Vary header (this is not a good idea):
 
 # mindlesslyCacheVary = true
-
-logSyslog = true
-logFile = /var/log/polipo/polipo.log
