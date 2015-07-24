@@ -2,7 +2,7 @@
 
 Example setup for running [polipo](http://www.pps.univ-paris-diderot.fr/~jch/software/polipo/) proxy server in a [Vagrant](http://www.vagrantup.com/) box.
 
-This can be used in combination with [vagrant-proxyconf][proxyconf] plugin to cache most HTTP traffic of the VMs to speed up Vagrant usage. The configuration should be easy to customize either as well for local machines as for cloud providers.
+This can be used in combination with the [vagrant-proxyconf][proxyconf] plugin to cache most HTTP traffic of the VMs to speed up Vagrant usage. The configuration should be easy to customize either as well for local machines as for cloud providers.
 
 Polipo does its best also when offline. But as it can't cache HTTPS traffic, you might want to use [vagrant-cachier](https://github.com/fgrehm/vagrant-cachier) in combination with vagrant-proxyconf if you aim to use Vagrant without internet connection at times.
 
@@ -11,7 +11,8 @@ Note that the example configuration allows access from everywhere. That should b
 ## Usage
 
 * Install Vagrant 1.2 or later: [www.vagrantup.com/downloads](http://www.vagrantup.com/downloads)
-* Install Vagrant plugins:
+
+* With Vagrant versions older than 1.7, install the vagrant-omnibus plugin:
 
         vagrant plugin install vagrant-omnibus
 
@@ -27,7 +28,7 @@ Note that the example configuration allows access from everywhere. That should b
 
 ### Configuring vagrant-proxyconf
 
-* Install vagrant-proxyconf plugin:
+* Install the vagrant-proxyconf plugin:
 
         vagrant plugin install vagrant-proxyconf
 

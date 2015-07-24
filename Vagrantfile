@@ -10,8 +10,15 @@ Vagrant.configure("2") do |config|
   # Disable default share
   config.vm.synced_folder '.', '/vagrant', disabled: true
 
-  # Configure plugins
-  config.omnibus.chef_version = :latest
+  # Ensure that Chef is installed. Vagrant 1.7+ does it natively, with older
+  # versions we require the vagrant-omnibus plugin
+  if Gem::Version.new(Vagrant::VERSION) < Gem::Version.new('1.7')
+    if Vagrant.has_plugin?('vagrant-omnibus')
+      config.omnibus.chef_version = :latest
+    else
+      raise('Please upgrade Vagrant to version 1.7 or newer, or install the "vagrant-omnibus" plugin')
+    end
+  end
 
   # Disable the vagrant-proxyconf plugin, as the proxy might not
   # have been installed or configured yet.
