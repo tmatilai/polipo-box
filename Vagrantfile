@@ -30,8 +30,9 @@ Vagrant.configure("2") do |config|
   config.vm.provision :shell, inline: 'apt-get update'
 
   # Install and configure polipo
-  config.vm.provision :chef_solo do |chef|
+  config.vm.provision :chef_zero do |chef|
     chef.cookbooks_path = ['site-cookbooks']
+    chef.nodes_path = 'nodes'
     chef.add_recipe 'polipo'
 
     chef.json = {
