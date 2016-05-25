@@ -1,5 +1,5 @@
 IP  = ENV.fetch('IP', '192.168.33.200')
-BOX = ENV.fetch('BOX', 'bento/debian-8.2')
+BOX = ENV.fetch('BOX', 'bento/debian-8.4')
 
 Vagrant.configure("2") do |config|
   config.vm.box      = BOX
